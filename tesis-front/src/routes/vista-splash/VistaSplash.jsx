@@ -2,9 +2,12 @@ import ImagenFondo from "./components/ImagenFondo";
 import LogoAgro from "./components/LogoAgro";
 import Boton from "./components/Boton";
 import TextoInicio from "./components/TextoInicio";
+import { useNavigate } from 'react-router-dom';
 
 
 export default function VistaSplash() {
+    const navigate = useNavigate();
+
     return (
         <div className="relative min-h-screen w-full overflow-hidden">
             {/* Fondo en capa inferior */}
@@ -20,7 +23,7 @@ export default function VistaSplash() {
                 <section className="flex w-full max-w-3xl flex-col items-center gap-6 text-center sm:gap-8">
                     <LogoAgro />
                     <TextoInicio />
-                    <Boton onClick={() => { /* TODO: navegación o acción */ }}>
+                    <Boton onClick={() => { navigate('/login'); }}>
                         Empezar…
                     </Boton>
                 </section>
